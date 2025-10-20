@@ -568,6 +568,14 @@
       "tag": "good"
     },
     {
+      "id": 172,
+      "filename": "173.jpg",
+      "image": "images/173.jpg",
+      "prediction": "The image features a ginger and white cat sitting on a dark green surface. The cat is positioned in a seated position, with its body angled slightly to the left, but its head is turned to the right, looking towards the right side of the frame. The cat's fur is predominantly orange with darker orange stripes, and its chest, underbelly, and paws are white. Its eyes are closed, and its ears are perked up. The cat's tail is curled around its left side, with the tip of the tail extending out to the left. The cat is sitting on a dark green surface, which appears to be a piece of furniture, possibly a chair or a table. The background is dark and indistinct, with a dark brown wooden structure visible on the left and right sides. The lighting in the image is dim, creating a strong contrast with the brightly lit cat. The image is a photograph with a focus on the cat, and the style of the image is realistic.",
+      "iter": "0000174000",
+      "tag": "bad"
+    },
+    {
       "id": 175,
       "filename": "176.jpg",
       "image": "images/176.jpg",
@@ -3196,14 +3204,6 @@
       "filename": "4987.jpg",
       "image": "images/4987.jpg",
       "prediction": "In the image, a person stands in a snowy, outdoor environment, standing on a snow-covered ground. They are wearing a full-body snowsuit with a green and black camouflage pattern, a white helmet, and large ski goggles with orange lenses. The person is holding a snowboard vertically in front of them, with their left hand on the top of the board and their right hand in their pocket. The snowboard is adorned with a complex graphic that includes a green and black cartoonish character, a white helmet, and a black-and-white striped pattern. The background consists of a snow-covered landscape with a forest of evergreen trees and a distant mountain under an overcast sky. The sky is a uniform, light gray. The person's face is obscured by the helmet and goggles, but their posture suggests they are posing for the photo.",
-      "iter": "0000174000",
-      "tag": "bad"
-    },
-    {
-      "id": 4994,
-      "filename": "4995.jpg",
-      "image": "images/4995.jpg",
-      "prediction": "The image shows an interior room with a warm, yellowish color palette. The walls are painted a pale yellow, and the ceiling is white. In the center of the room, there is a living area with a brown sofa and a table. To the left of the sofa, there is a small, glass-topped coffee table with a green and white patterned top. A black flat-screen television is mounted on the wall above the table. To the right of the sofa, there is a window covered with sheer, light purple curtains and a dark red valance. A white radiator is situated below the window. In the foreground, there is a brown sofa, a table lamp with a white shade, and a small table lamp with a white shade. The room is illuminated by a combination of natural light from the window and artificial light from the lamps. The floor is covered with a light-colored carpet. The image is taken from a slightly elevated angle, with the back of a chair visible in the bottom right corner.",
       "iter": "0000174000",
       "tag": "bad"
     }

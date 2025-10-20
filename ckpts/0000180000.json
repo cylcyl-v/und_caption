@@ -568,6 +568,14 @@
       "tag": "good"
     },
     {
+      "id": 172,
+      "filename": "173.jpg",
+      "image": "images/173.jpg",
+      "prediction": "The image features a ginger and white cat. The cat is sitting on a dark green surface, possibly a table or a piece of furniture, with its body angled towards the right side of the frame. Its fur is predominantly orange with white patches on its chest, neck, and paws. The cat's head is turned to its right, and its eyes are closed, giving it a sleepy or contented expression. Its tail is curled around its body. The cat's front paws are visible, with one paw resting on the surface and the other hanging down. The background is dark, with a dark brown wooden structure visible on the left and right sides. The lighting appears to be from a direct, on-camera flash, creating bright highlights on the cat's fur and casting deep shadows. The overall image has a warm color tone and a slightly grainy texture.",
+      "iter": "0000180000",
+      "tag": "bad"
+    },
+    {
       "id": 175,
       "filename": "176.jpg",
       "image": "images/176.jpg",
@@ -3196,14 +3204,6 @@
       "filename": "4987.jpg",
       "image": "images/4987.jpg",
       "prediction": "In the image, a person stands on a snow-covered field, dressed in full winter attire. They are wearing a hooded jacket with a green, white, and black camouflage pattern, a black neck gaiter, and black gloves. A black balaclava covers their lower face, with only their eyes visible. They are holding a snowboard vertically in their left hand. The snowboard is predominantly black with a complex graphic design featuring a large, stylized eye and a skull-like face. The person's right hand is in their jacket pocket. The background consists of a snow-covered landscape with a line of evergreen trees in the distance. The sky is overcast, providing diffuse, even lighting. The ground is a flat, snow-covered surface with some patches of ice. The image is a static, eye-level shot.",
-      "iter": "0000180000",
-      "tag": "bad"
-    },
-    {
-      "id": 4994,
-      "filename": "4995.jpg",
-      "image": "images/4995.jpg",
-      "prediction": "The image shows a room with beige-colored walls and a white ceiling. In the center of the room, there is a brown sofa with a patterned fabric. To the left of the sofa is a glass-topped coffee table with a silver-colored metal frame. On the table, there is a black electronic device, possibly a gaming console, and a black electronic device with a white screen. A red fire extinguisher is also on the table. To the right of the table is a window covered by sheer, light purple curtains and a dark red, patterned valance. A red plastic crate is on the floor next to the table. In the background, there is a window covered by a dark red, patterned valance and a white, textured wall. A white, rectangular object, possibly a piece of furniture, is visible on the right side of the room. The ceiling is white and has a textured surface. The lighting is artificial, with a light source on the right side of the image.",
       "iter": "0000180000",
       "tag": "bad"
     }

@@ -568,6 +568,14 @@
       "tag": "good"
     },
     {
+      "id": 172,
+      "filename": "173.jpg",
+      "image": "images/173.jpg",
+      "prediction": "This is a hyperrealistic painting depicting a cat and a mouse. The main subject is a large, ginger and white cat, which is standing on its hind legs and looking down at a small, light-colored mouse. The cat's fur is rendered with incredible detail, showing individual hairs and texture. The mouse is positioned on the cat's chest, looking up at the cat's face. The cat's head is turned to the right, and its gaze is directed towards the mouse. The background is dark, almost black, which makes the subjects stand out. The lighting is dramatic, coming from the upper left, casting a distinct shadow of the cat and mouse onto the surface. The overall style of the painting is realistic, with meticulous brushwork and a strong sense of volume and texture. The composition is tight, focusing on the interaction between the two animals.",
+      "iter": "0000186000",
+      "tag": "bad"
+    },
+    {
       "id": 175,
       "filename": "176.jpg",
       "image": "images/176.jpg",
@@ -3196,14 +3204,6 @@
       "filename": "4987.jpg",
       "image": "images/4987.jpg",
       "prediction": "In the image, a person stands on a snow-covered, snowboard, facing the camera. The individual is wearing a full snowsuit with a green, white, and black pattern, a white helmet, and large ski goggles with orange lenses. The snowboard is positioned vertically, with its base facing the viewer. The snowboard's base is black with a green and white graphic of a stylized, stylized, and stylized tree. The person is wearing black snowboard boots. The background consists of a snow-covered landscape with a line of evergreen trees and a distant, snow-capped mountain under an overcast sky. The sky is a uniform greyish-white. The snowboard is held vertically, and the person is standing on it, facing the camera.",
-      "iter": "0000186000",
-      "tag": "bad"
-    },
-    {
-      "id": 4994,
-      "filename": "4995.jpg",
-      "image": "images/4995.jpg",
-      "prediction": "The image shows a living room with beige-colored walls and a white ceiling. In the foreground, there is a brown fabric sofa with a patterned throw blanket draped over it. To the left, a black flat-screen television is mounted on the wall above a white media console. The console has a black flat-screen television mounted above it, and a black stereo system is on the floor beside it. A red fire extinguisher is on the floor next to the console. In the background, there is a window with sheer, light purple curtains and a red valance. A red fire extinguisher is on the floor next to the console. The room has a light-colored carpeted floor. The ceiling is white. The lighting is artificial, and the overall style of the room is modern.",
       "iter": "0000186000",
       "tag": "bad"
     }

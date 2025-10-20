@@ -1,47 +1,181 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"/>
-<title>多CKPT · Top/Bottom 可视化</title><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<style>
-:root{--bg:#0b0c0f;--card:#11141a;--muted:#9aa4b2;--text:#e6edf3;--border:#1f2937}
-html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-header{position:sticky;top:0;background:#0b0c0fea;border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
-.wrap{max-width:1200px;margin:0 auto;padding:12px 16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;padding:16px;max-width:1400px;margin:0 auto}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.thumb{aspect-ratio:4/3;width:100%;object-fit:cover;background:#0a0c10;border-bottom:1px solid var(--border)}
-.meta{padding:10px 12px}
-.tag{border:1px solid var(--border);padding:2px 6px;border-radius:999px;color:var(--muted);font-size:12px;margin-right:6px}
-.tag.good{color:#34d399;border-color:#065f46}.tag.bad{color:#fca5a5;border-color:#7f1d1d}
-input,select,button{background:#11141a;border:1px solid var(--border);color:var(--text);padding:8px 10px;border-radius:10px}
-.toolbar{display:grid;grid-template-columns:auto auto 1fr auto auto auto;gap:8px;align-items:center}
-</style>
-<header><div class="wrap">
-<h1 style="margin:0 0 8px">多CKPT · Top/Bottom 可视化</h1>
-<div class="toolbar">
-<label>CKPT</label><select id="ckpt"></select>
-<input id="q" type="search" placeholder="搜索 prediction/id/文件名；右侧可筛 good/bad"/>
-<select id="tag"><option value="all">全部</option><option value="good">good</option><option value="bad">bad</option></select>
-<select id="sort"><option value="default">默认</option><option value="id_asc">id升序</option><option value="id_desc">id降序</option></select>
-<div id="cnt" style="color:#9aa4b2;font-size:12px"></div>
-</div></div></header>
-<main><section id="grid" class="grid"></section><div id="more" style="height:24px"></div></main>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>多CKPT理解结果预览 · Top/Bottom 可视化</title>
+  <meta name="description" content="按 ckpt 切换，展示打了 good/bad 标签的样本；支持搜索、排序、复制、筛选标签" />
+  <style>
+    :root { --bg:#0b0c0f; --card:#11141a; --muted:#9aa4b2; --text:#e6edf3; --accent:#3b82f6; --border:#1f2937; }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(11,12,15,.95),rgba(11,12,15,.75));border-bottom:1px solid var(--border)}
+    .wrap{max-width:1200px;margin:0 auto;padding:12px 16px}
+    h1{margin:0 0 6px;font-size:18px;font-weight:700;letter-spacing:.2px}
+    .muted{color:var(--muted);font-size:12px}
+    .toolbar{display:grid;grid-template-columns:auto auto 1fr auto auto auto;gap:8px;align-items:center}
+    input[type="search"]{width:100%;padding:10px 12px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--text);outline:none}
+    select,button{padding:10px 12px;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--text);cursor:pointer}
+    .seg{display:inline-flex;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+    .seg button{padding:8px 12px;border:0;background:transparent}
+    .seg button.active{background:#0c1118}
+    .count{color:var(--muted);font-size:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;padding:16px;max-width:1400px;margin:0 auto}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s ease}
+    .card:hover{transform:translateY(-2px)}
+    .thumb{aspect-ratio:4/3;display:block;width:100%;object-fit:cover;background:#0a0c10;border-bottom:1px solid var(--border)}
+    .meta{padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+    .pred{display:flex;flex-direction:column;gap:6px}
+    .pred pre{white-space:pre-wrap;word-break:break-word;margin:0;font-size:13px;line-height:1.45}
+    .short.clamped{max-height:7.5em;overflow:hidden;position:relative}
+    .short.clamped::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3em;background:linear-gradient(to bottom,rgba(17,20,26,0),var(--card))}
+    .row{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .copy{font-size:12px;border:1px solid var(--border);background:#0c1118}
+    .tag{border:1px solid var(--border);padding:2px 6px;border-radius:999px;color:var(--muted);font-size:12px}
+    .tag.good{color:#34d399;border-color:#065f46}
+    .tag.bad{color:#fca5a5;border-color:#7f1d1d}
+    .hidden{display:none!important}
+    .danger{color:#fca5a5}
+    footer{color:var(--muted);text-align:center;padding:24px}
+    .kbd{font:12px/1.2 ui-monospace,SFMono-Regular,Consolas,Monaco,Menlo,monospace;background:#0c1118;border:1px solid var(--border);padding:2px 6px;border-radius:6px;color:#cbd5e1}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>多CKPT理解结果预览 · Top/Bottom 可视化</h1>
+      <div class="muted" id="metaLine">加载中…</div>
+      <div class="toolbar">
+        <label class="muted">CKPT</label>
+        <select id="ckptSel"></select>
+        <input id="q" type="search" placeholder="搜索：prediction / id / 文件名 / 任意字段（按 /good /bad 可筛标签）" />
+        <div class="seg" id="tagSeg">
+          <button data-tag="all" class="active">全部</button>
+          <button data-tag="good">good</button>
+          <button data-tag="bad">bad</button>
+        </div>
+        <select id="sort">
+          <option value="default">排序：默认(原始顺序)</option>
+          <option value="id_asc">排序：id(升序)</option>
+          <option value="id_desc">排序：id(降序)</option>
+        </select>
+        <div class="count"><span id="shown">0</span> / <span id="total">0</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="app">
+    <div id="error" class="wrap danger hidden">无法加载数据文件。请确认 ckpts/index.json 与各 ckpts/*.json 存在。</div>
+    <section id="grid" class="grid"></section>
+    <div id="sentinel" class="wrap" style="height: 24px;"></div>
+  </main>
+
+  <footer>可按 <span class="kbd">/good</span>、<span class="kbd">/bad</span> 在搜索框内快速筛选；页面为纯静态，适配 GitHub Pages</footer>
+
 <script>
-const S={all:[],view:[],rendered:0,batch:120,tag:"all"};const $c=document.getElementById("ckpt"),$q=document.getElementById("q"),$t=document.getElementById("tag"),$s=document.getElementById("sort"),$g=document.getElementById("grid"),$m=document.getElementById("more"),$cnt=document.getElementById("cnt");
-function parseId(x){if(x==null)return null;if(typeof x==='number')return x;const m=String(x).match(/\d+/);return m?Number(m[0]):null}
-function card(it){const a=document.createElement('article');a.className='card';
-const img=document.createElement('img');img.className='thumb';img.loading='lazy';img.decoding='async';img.src=it.image||'';img.alt=it.filename||'';a.appendChild(img);
-const d=document.createElement('div');d.className='meta';
-const p=document.createElement('pre');p.textContent=(it.prediction||'');p.style.whiteSpace='pre-wrap';p.style.margin='0 0 8px';
-const tags=document.createElement('div');const t1=document.createElement('span');t1.className='tag';t1.textContent=it.iter?('iter:'+it.iter):'';const t2=document.createElement('span');t2.className='tag '+(it.tag||'');t2.textContent=it.tag||'';tags.appendChild(t1);tags.appendChild(t2);
-d.appendChild(p);d.appendChild(tags);a.appendChild(d);return a}
-function setCnt(){ $cnt.textContent=S.view.length+" / "+S.all.length }
-function clear(){ $g.innerHTML=''; S.rendered=0 }
-function renderMore(){ const n=Math.min(S.batch,S.view.length-S.rendered); if(n<=0)return; const frag=document.createDocumentFragment(); for(let i=0;i<n;i++){frag.appendChild(card(S.all[S.view[S.rendered+i]]))} $g.appendChild(frag); S.rendered+=n }
-function recompute(){ const q=($q.value||'').toLowerCase(); const tg=$t.value;
-const idx=[]; for(let i=0;i<S.all.length;i++){const it=S.all[i]; if(tg!=='all' && (it.tag||'')!==tg) continue; const hay=[it.prediction,it.filename,it.iter,it.tag].filter(Boolean).join(' ').toLowerCase(); if(!q || hay.includes(q)) idx.push(i) }
-if($s.value==='id_asc') idx.sort((a,b)=>parseId(S.all[a].id)-parseId(S.all[b].id)); else if($s.value==='id_desc') idx.sort((a,b)=>parseId(S.all[b].id)-parseId(S.all[a].id));
-S.view=idx; setCnt(); clear(); renderMore() }
-$q.oninput=$t.onchange=$s.onchange=recompute;
-(new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting)renderMore()})).observe($m);
-fetch("ckpts/index.json").then(r=>r.json()).then(j=>{ const xs=j.ckpts||[]; $c.innerHTML=xs.map(x=>`<option>${x}</option>`).join(""); $c.onchange=()=>load($c.value); if(xs.length) load(xs[xs.length-1])});
-function load(id){ fetch("ckpts/"+id+".json").then(r=>r.json()).then(j=>{ S.all=j.items||[]; setCnt(); clear(); recompute() }) }
-</script></html>
+;(() => {
+  const state = { meta:{}, all:[], view:[], batchSize:120, rendered:0, ckptList:[], current:null, tag:'all' };
+  const $metaLine = document.getElementById('metaLine');
+  const $sel = document.getElementById('ckptSel');
+  const $q = document.getElementById('q');
+  const $sort = document.getElementById('sort');
+  const $grid = document.getElementById('grid');
+  const $err = document.getElementById('error');
+  const $shown = document.getElementById('shown');
+  const $total = document.getElementById('total');
+  const $sentinel = document.getElementById('sentinel');
+  const $tagSeg = document.getElementById('tagSeg');
+
+  function parseId(x){ if(x==null) return null; if(typeof x==='number') return x; const m=String(x).match(/\d+/); return m?Number(m[0]):null; }
+
+  function renderCard(item){
+    const art = document.createElement('article'); art.className='card';
+    const img = document.createElement('img'); img.className='thumb'; img.loading='lazy'; img.decoding='async';
+    img.src = item.image || ''; img.alt = (item.prediction||'').slice(0,120); img.onerror=()=>{ img.alt='(图像无法加载)'; };
+    const meta = document.createElement('div'); meta.className='meta';
+
+    const pred = String(item.prediction||''); const PRE_LIMIT=240; const needClamp = pred.length>PRE_LIMIT;
+    const box = document.createElement('div'); box.className='pred';
+    const preShort = document.createElement('pre'); const preFull = document.createElement('pre'); preFull.className='full hidden';
+    preShort.textContent = needClamp ? (pred.slice(0,PRE_LIMIT)+'…') : pred; if(needClamp) preShort.classList.add('short','clamped'); else preShort.classList.add('short');
+    preFull.textContent = pred;
+    const toggle = document.createElement('button'); toggle.className='copy toggle'+(needClamp?'':' hidden'); toggle.textContent='展开';
+    box.appendChild(preShort); box.appendChild(preFull); box.appendChild(toggle);
+
+    const row = document.createElement('div'); row.className='row';
+    const left = document.createElement('div'); left.className='row'; left.style.gap='6px';
+    const tag1 = document.createElement('span'); tag1.className='tag'; tag1.textContent = item.id!=null ? ('id:'+item.id) : (item.filename||'');
+    if(tag1.textContent) left.appendChild(tag1);
+    if(item.iter){ const t=document.createElement('span'); t.className='tag'; t.textContent='iter:'+item.iter; left.appendChild(t); }
+    if(item.tag){ const tg=document.createElement('span'); tg.className='tag '+item.tag; tg.textContent=item.tag; left.appendChild(tg); }
+    const right = document.createElement('div'); right.className='row'; right.style.gap='6px';
+    const copyBtn = document.createElement('button'); copyBtn.className='copy do-copy'; copyBtn.textContent='复制预测';
+    const dl = document.createElement('a'); dl.className='copy'; dl.href=item.image||''; dl.download=''; dl.textContent='下载图';
+    right.appendChild(copyBtn); right.appendChild(dl);
+    row.appendChild(left); row.appendChild(right);
+
+    meta.appendChild(box); meta.appendChild(row);
+    art.appendChild(img); art.appendChild(meta);
+    return art;
+  }
+
+  $grid.addEventListener('click',(e)=>{
+    const btn = e.target.closest('button'); if(!btn) return;
+    const card = e.target.closest('.card'); if(!card) return;
+    if(btn.classList.contains('do-copy')){
+      const full = card.querySelector('.pred .full')?.textContent ?? '';
+      navigator.clipboard.writeText(full).then(()=>{ const old=btn.textContent; btn.textContent='已复制'; setTimeout(()=>btn.textContent=old,1200); });
+    } else if(btn.classList.contains('toggle')){
+      const s=card.querySelector('.pred .short'), f=card.querySelector('.pred .full');
+      const exp=!f.classList.contains('hidden'); if(exp){ f.classList.add('hidden'); s.classList.remove('hidden'); btn.textContent='展开'; }
+      else { f.classList.remove('hidden'); s.classList.add('hidden'); btn.textContent='收起'; }
+    }
+  });
+
+  $tagSeg.addEventListener('click',(e)=>{
+    const b = e.target.closest('button'); if(!b) return;
+    $tagSeg.querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    state.tag = b.dataset.tag || 'all';
+    recomputeView();
+  });
+
+  function setCounts(){ $shown.textContent = state.view.length.toString(); $total.textContent = state.all.length.toString(); }
+  function clearGrid(){ $grid.innerHTML=''; state.rendered=0; }
+  function renderMore(){ const remain = state.view.length - state.rendered; if(remain<=0) return; const take = Math.min(state.batchSize, remain);
+    const frag=document.createDocumentFragment(); for(let i=0;i<take;i++){ const idx=state.view[state.rendered+i]; const item=state.all[idx]; frag.appendChild(renderCard(item)); }
+    $grid.appendChild(frag); state.rendered += take; }
+  function recomputeView(){
+    const q = ($q.value||'').trim().toLowerCase();
+    const wantTag = state.tag;
+    const match = (it)=>{
+      if(wantTag!=='all' && (it.tag||'').toLowerCase()!==wantTag) return false;
+      if(!q) return true;
+      const hay=[it.prediction,it.filename,it.image,it.id,it.iter,it.tag].filter(Boolean).join(' ').toLowerCase();
+      return hay.includes(q);
+    };
+    const mode = $sort.value;
+    const idxs=[]; for(let i=0;i<state.all.length;i++) if(match(state.all[i])) idxs.push(i);
+    if(mode==='id_asc') idxs.sort((a,b)=>parseId(state.all[a].id)-parseId(state.all[b].id));
+    else if(mode==='id_desc') idxs.sort((a,b)=>parseId(state.all[b].id)-parseId(state.all[a].id));
+    state.view=idxs; setCounts(); clearGrid(); renderMore();
+  }
+  $q.addEventListener('input',recomputeView); $sort.addEventListener('change',recomputeView);
+  const io=new IntersectionObserver((es)=>{ for(const e of es) if(e.isIntersecting) renderMore(); }); io.observe($sentinel);
+
+  function metaLine(meta){ const xs=[]; if(meta?.model) xs.push(`model: ${meta.model}`); if(meta?.iter) xs.push(`iter: ${meta.iter}`); if(meta?.count!=null) xs.push(`samples: ${meta.count}`); if(meta?.xlsx) xs.push(`xlsx: ${meta.xlsx}`); return xs.length?xs.join(' · '):'就绪'; }
+  function loadCkpt(file){ return fetch(`ckpts/${file}.json`,{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }); }
+  function initCkptSelect(list){
+    $sel.innerHTML=''; for(const id of list){ const opt=document.createElement('option'); opt.value=id; opt.textContent=id; $sel.appendChild(opt); }
+    if(list.length){ $sel.value=list[list.length-1]; } $sel.addEventListener('change',()=>{ switchCkpt($sel.value); });
+  }
+  function switchCkpt(id){
+    loadCkpt(id).then(json=>{ state.meta=json?.meta||{}; state.all=Array.isArray(json?.items)?json.items:[];
+      $metaLine.textContent = metaLine(state.meta); setCounts(); clearGrid(); recomputeView(); }).catch(err=>{ console.error(err); $err.classList.remove('hidden'); });
+  }
+  fetch('ckpts/index.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(j=>{ const list=Array.isArray(j?.ckpts)?j.ckpts:[]; state.ckptList=list; initCkptSelect(list); if(list.length) switchCkpt($sel.value); })
+    .catch(err=>{ console.error(err); $err.classList.remove('hidden'); });
+})();
+</script>
+</body>
+</html>
