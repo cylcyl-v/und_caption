@@ -162,7 +162,7 @@
   $q.addEventListener('input',recomputeView); $sort.addEventListener('change',recomputeView);
   const io=new IntersectionObserver((es)=>{ for(const e of es) if(e.isIntersecting) renderMore(); }); io.observe($sentinel);
 
-  function metaLine(meta){ const xs=[]; if(meta?.model) xs.push(`model: ${meta.model}`); if(meta?.iter) xs.push(`iter: ${meta.iter}`); if(meta?.count!=null) xs.push(`samples: ${meta.count}`); if(meta?.xlsx) xs.push(`xlsx: ${meta.xlsx}`); return xs.length?xs.join(' · '):'就绪'; }
+  function metaLine(meta){ const xs=[]; if(meta?.model) xs.push(`model: ${meta.model}`); if(meta?.iter) xs.push(`iter: ${meta.iter}`); if(meta?.count!=null) xs.push(`samples: ${meta.count}`); if(meta?.xlsx) xs.push(`xlsx: ${meta.xlsx}, 按照132000ckpt的回答标注的good/bad`); return xs.length?xs.join(' · '):'就绪'; }
   function loadCkpt(file){ return fetch(`ckpts/${file}.json`,{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }); }
   function initCkptSelect(list){
     $sel.innerHTML=''; for(const id of list){ const opt=document.createElement('option'); opt.value=id; opt.textContent=id; $sel.appendChild(opt); }
