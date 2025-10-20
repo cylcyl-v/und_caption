@@ -1,0 +1,47 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"/>
+<title>多CKPT · Top/Bottom 可视化</title><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>
+:root{--bg:#0b0c0f;--card:#11141a;--muted:#9aa4b2;--text:#e6edf3;--border:#1f2937}
+html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+header{position:sticky;top:0;background:#0b0c0fea;border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
+.wrap{max-width:1200px;margin:0 auto;padding:12px 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;padding:16px;max-width:1400px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.thumb{aspect-ratio:4/3;width:100%;object-fit:cover;background:#0a0c10;border-bottom:1px solid var(--border)}
+.meta{padding:10px 12px}
+.tag{border:1px solid var(--border);padding:2px 6px;border-radius:999px;color:var(--muted);font-size:12px;margin-right:6px}
+.tag.good{color:#34d399;border-color:#065f46}.tag.bad{color:#fca5a5;border-color:#7f1d1d}
+input,select,button{background:#11141a;border:1px solid var(--border);color:var(--text);padding:8px 10px;border-radius:10px}
+.toolbar{display:grid;grid-template-columns:auto auto 1fr auto auto auto;gap:8px;align-items:center}
+</style>
+<header><div class="wrap">
+<h1 style="margin:0 0 8px">多CKPT · Top/Bottom 可视化</h1>
+<div class="toolbar">
+<label>CKPT</label><select id="ckpt"></select>
+<input id="q" type="search" placeholder="搜索 prediction/id/文件名；右侧可筛 good/bad"/>
+<select id="tag"><option value="all">全部</option><option value="good">good</option><option value="bad">bad</option></select>
+<select id="sort"><option value="default">默认</option><option value="id_asc">id升序</option><option value="id_desc">id降序</option></select>
+<div id="cnt" style="color:#9aa4b2;font-size:12px"></div>
+</div></div></header>
+<main><section id="grid" class="grid"></section><div id="more" style="height:24px"></div></main>
+<script>
+const S={all:[],view:[],rendered:0,batch:120,tag:"all"};const $c=document.getElementById("ckpt"),$q=document.getElementById("q"),$t=document.getElementById("tag"),$s=document.getElementById("sort"),$g=document.getElementById("grid"),$m=document.getElementById("more"),$cnt=document.getElementById("cnt");
+function parseId(x){if(x==null)return null;if(typeof x==='number')return x;const m=String(x).match(/\d+/);return m?Number(m[0]):null}
+function card(it){const a=document.createElement('article');a.className='card';
+const img=document.createElement('img');img.className='thumb';img.loading='lazy';img.decoding='async';img.src=it.image||'';img.alt=it.filename||'';a.appendChild(img);
+const d=document.createElement('div');d.className='meta';
+const p=document.createElement('pre');p.textContent=(it.prediction||'');p.style.whiteSpace='pre-wrap';p.style.margin='0 0 8px';
+const tags=document.createElement('div');const t1=document.createElement('span');t1.className='tag';t1.textContent=it.iter?('iter:'+it.iter):'';const t2=document.createElement('span');t2.className='tag '+(it.tag||'');t2.textContent=it.tag||'';tags.appendChild(t1);tags.appendChild(t2);
+d.appendChild(p);d.appendChild(tags);a.appendChild(d);return a}
+function setCnt(){ $cnt.textContent=S.view.length+" / "+S.all.length }
+function clear(){ $g.innerHTML=''; S.rendered=0 }
+function renderMore(){ const n=Math.min(S.batch,S.view.length-S.rendered); if(n<=0)return; const frag=document.createDocumentFragment(); for(let i=0;i<n;i++){frag.appendChild(card(S.all[S.view[S.rendered+i]]))} $g.appendChild(frag); S.rendered+=n }
+function recompute(){ const q=($q.value||'').toLowerCase(); const tg=$t.value;
+const idx=[]; for(let i=0;i<S.all.length;i++){const it=S.all[i]; if(tg!=='all' && (it.tag||'')!==tg) continue; const hay=[it.prediction,it.filename,it.iter,it.tag].filter(Boolean).join(' ').toLowerCase(); if(!q || hay.includes(q)) idx.push(i) }
+if($s.value==='id_asc') idx.sort((a,b)=>parseId(S.all[a].id)-parseId(S.all[b].id)); else if($s.value==='id_desc') idx.sort((a,b)=>parseId(S.all[b].id)-parseId(S.all[a].id));
+S.view=idx; setCnt(); clear(); renderMore() }
+$q.oninput=$t.onchange=$s.onchange=recompute;
+(new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting)renderMore()})).observe($m);
+fetch("ckpts/index.json").then(r=>r.json()).then(j=>{ const xs=j.ckpts||[]; $c.innerHTML=xs.map(x=>`<option>${x}</option>`).join(""); $c.onchange=()=>load($c.value); if(xs.length) load(xs[xs.length-1])});
+function load(id){ fetch("ckpts/"+id+".json").then(r=>r.json()).then(j=>{ S.all=j.items||[]; setCnt(); clear(); recompute() }) }
+</script></html>
