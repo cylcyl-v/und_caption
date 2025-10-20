@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>多CKPT理解结果预览 · Top/Bottom 可视化</title>
+  <title>多CKPT理解结果预览 · Top/Bottom 可视化, 按照132000ckpt的回答标注的good/bad</title>
   <meta name="description" content="按 ckpt 切换，展示打了 good/bad 标签的样本；支持搜索、排序、复制、筛选标签" />
   <style>
     :root { --bg:#0b0c0f; --card:#11141a; --muted:#9aa4b2; --text:#e6edf3; --accent:#3b82f6; --border:#1f2937; }
@@ -162,7 +162,7 @@
   $q.addEventListener('input',recomputeView); $sort.addEventListener('change',recomputeView);
   const io=new IntersectionObserver((es)=>{ for(const e of es) if(e.isIntersecting) renderMore(); }); io.observe($sentinel);
 
-  function metaLine(meta){ const xs=[]; if(meta?.model) xs.push(`model: ${meta.model}`); if(meta?.iter) xs.push(`iter: ${meta.iter}`); if(meta?.count!=null) xs.push(`samples: ${meta.count}`); if(meta?.xlsx) xs.push(`xlsx: ${meta.xlsx}, 按照132000ckpt的回答标注的good/bad`); return xs.length?xs.join(' · '):'就绪'; }
+  function metaLine(meta){ const xs=[]; if(meta?.model) xs.push(`model: ${meta.model}`); if(meta?.iter) xs.push(`iter: ${meta.iter}`); if(meta?.count!=null) xs.push(`samples: ${meta.count}`); if(meta?.xlsx) xs.push(`xlsx: ${meta.xlsx}`); return xs.length?xs.join(' · '):'就绪'; }
   function loadCkpt(file){ return fetch(`ckpts/${file}.json`,{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }); }
   function initCkptSelect(list){
     $sel.innerHTML=''; for(const id of list){ const opt=document.createElement('option'); opt.value=id; opt.textContent=id; $sel.appendChild(opt); }
