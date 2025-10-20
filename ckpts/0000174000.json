@@ -568,10 +568,10 @@
       "tag": "good"
     },
     {
-      "id": 172,
-      "filename": "173.jpg",
-      "image": "images/173.jpg",
-      "prediction": "The image features a ginger and white cat sitting on a dark green surface. The cat is positioned in a seated position, with its body angled slightly to the left, but its head is turned to the right, looking towards the right side of the frame. The cat's fur is predominantly orange with darker orange stripes, and its chest, underbelly, and paws are white. Its eyes are closed, and its ears are perked up. The cat's tail is curled around its left side, with the tip of the tail extending out to the left. The cat is sitting on a dark green surface, which appears to be a piece of furniture, possibly a chair or a table. The background is dark and indistinct, with a dark brown wooden structure visible on the left and right sides. The lighting in the image is dim, creating a strong contrast with the brightly lit cat. The image is a photograph with a focus on the cat, and the style of the image is realistic.",
+      "id": 171,
+      "filename": "172.jpg",
+      "image": "images/172.jpg",
+      "prediction": "The image shows a large, circular wooden wheel, which is the central subject. The wheel is constructed from light-colored wood, with a visible grain and a glossy finish. It features a central hub with a series of spokes radiating outwards. The spokes are made of a darker wood, possibly walnut or a similar hardwood, and are attached to the rim with visible metal pins. The rim is a lighter, unfinished wood, possibly plywood or a similar material. The wheel is mounted on a circular wooden frame, which is part of a larger structure. The background is cluttered and out of focus, suggesting an indoor setting. To the right, a white plastic bag with some text is visible. The lighting is direct and harsh, likely from an on-camera flash, creating strong highlights on the wheel's surface and casting shadows. The overall image quality is low, with visible digital noise and a lack of sharp focus.",
       "iter": "0000174000",
       "tag": "bad"
     },

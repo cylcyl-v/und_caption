@@ -568,10 +568,10 @@
       "tag": "good"
     },
     {
-      "id": 172,
-      "filename": "173.jpg",
-      "image": "images/173.jpg",
-      "prediction": "This is a hyperrealistic painting depicting a cat and a mouse. The main subject is a large, ginger and white cat, which is standing on its hind legs and looking down at a small, light-colored mouse. The cat's fur is rendered with incredible detail, showing individual hairs and texture. The mouse is positioned on the cat's chest, looking up at the cat's face. The cat's head is turned to the right, and its gaze is directed towards the mouse. The background is dark, almost black, which makes the subjects stand out. The lighting is dramatic, coming from the upper left, casting a distinct shadow of the cat and mouse onto the surface. The overall style of the painting is realistic, with meticulous brushwork and a strong sense of volume and texture. The composition is tight, focusing on the interaction between the two animals.",
+      "id": 171,
+      "filename": "172.jpg",
+      "image": "images/172.jpg",
+      "prediction": "The image shows a large, circular wooden wheel, likely a ship's wheel, mounted on a light-colored wooden platform. The wheel is constructed from light-colored wood with a visible grain and signs of wear. It features a central hub with a series of spokes radiating outwards. The spokes are made of a darker, reddish-brown wood and are attached to the rim with visible metal fittings. The wheel is positioned against a plain, light-colored wall. In the center of the wheel, a dark, furry animal, possibly a rabbit, is curled up and sleeping. The animal has a dark brown and black coat, a white patch on its chest, and its eyes are closed. The wheel is set against a plain, light-colored wall, and a black electrical cord is visible on the right side. The overall scene is static, with no motion blur.",
       "iter": "0000186000",
       "tag": "bad"
     },

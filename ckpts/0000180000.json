@@ -568,10 +568,10 @@
       "tag": "good"
     },
     {
-      "id": 172,
-      "filename": "173.jpg",
-      "image": "images/173.jpg",
-      "prediction": "The image features a ginger and white cat. The cat is sitting on a dark green surface, possibly a table or a piece of furniture, with its body angled towards the right side of the frame. Its fur is predominantly orange with white patches on its chest, neck, and paws. The cat's head is turned to its right, and its eyes are closed, giving it a sleepy or contented expression. Its tail is curled around its body. The cat's front paws are visible, with one paw resting on the surface and the other hanging down. The background is dark, with a dark brown wooden structure visible on the left and right sides. The lighting appears to be from a direct, on-camera flash, creating bright highlights on the cat's fur and casting deep shadows. The overall image has a warm color tone and a slightly grainy texture.",
+      "id": 171,
+      "filename": "172.jpg",
+      "image": "images/172.jpg",
+      "prediction": "The image shows a wooden wagon wheel, which is the central subject. The wheel is made of light-colored wood with a visible grain and a central hub. It features a large, circular wooden rim with multiple spokes radiating outwards. The spokes are also made of wood and are attached to the rim with metal or wooden pins. The wheel is mounted on a wooden axle, which is visible on the left side of the frame. The entire wheel is set within a large, light-colored wooden wheel rim, which has a curved top and a flat bottom. The background is a plain, light-colored surface, possibly a floor or a workbench. The lighting is direct, likely from an on-camera flash, creating some highlights on the wooden surfaces. The overall image is clear, with the focus primarily on the wooden wheel.",
       "iter": "0000180000",
       "tag": "bad"
     },
