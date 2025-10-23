@@ -1,0 +1,363 @@
+"class","image_relpath","gt","pred","score"
+"OCR","OCR/0001.jpg","Yes","Yes.","True"
+"OCR","OCR/0001.jpg","No","No.","True"
+"OCR","OCR/0002.jpg","Yes","No.","False"
+"OCR","OCR/0002.jpg","No","No.","True"
+"OCR","OCR/0003.jpg","Yes","To determine whether the word ""beavertails pastry"" is present in the logo, we need to carefully examine the image provided. The image shows a sign with the text ""BEAVERTAILS"" in large, stylized letters, with ""PASTRY"" written in smaller text below it. The word ""PASTRY"" is clearly visible and is part of the logo. Therefore, the answer is yes.","True"
+"OCR","OCR/0003.jpg","No","To determine whether the word ""beavertalls pastry"" is present in the logo, we need to carefully examine the image provided. The image shows a sign for ""BeaverTalls"" with the word ""PASTRY"" in smaller letters beneath it. The word ""beavertalls"" is spelled out in large, bold, orange letters with a red outline, and ""PASTRY"" is in smaller, white letters on a red background. Therefore, the full phrase ""beavertalls pastry"" is indeed present in the logo. The answer is yes.","False"
+"OCR","OCR/0004.jpg","Yes","No.","False"
+"OCR","OCR/0004.jpg","No","No.","True"
+"OCR","OCR/0005.jpg","Yes","To determine whether the word ""kress"" is present in the logo, we need to carefully examine the image provided. The image shows a large, white building with a prominent red sign that reads ""KRESS"" in bold, uppercase letters. The sign is positioned centrally on the building, making it easily noticeable.
+
+Step-by-step analysis:
+1. Observe the image and identify the main elements.
+2. Focus on the sign located on the building.
+3. Read the text on the sign.
+4. Compare the text with the word ""kress"".
+
+Based on these steps, the word ""kress"" is clearly visible on the sign. Therefore, the answer is yes.","True"
+"OCR","OCR/0005.jpg","No","No.","True"
+"OCR","OCR/0006.jpg","Yes","To determine the answer, we need to carefully examine the image provided. The image shows a circular sign with a blue background and white text. The text reads ""THE BEATLES STORY"" in large, bold letters, with ""LIVERPOOL"" in smaller letters at the bottom. The logo features four stylized white silhouettes of the Beatles' faces above the text, each with distinct hairstyles and facial features. The sign is mounted on a brick wall, which suggests it is an outdoor sign, likely located in a public area. The brick wall has a rough texture, and the sign is positioned at eye level, making it easily visible to passersby. The overall design is simple and iconic, with the Beatles' faces and the text clearly indicating the name of the band and the location. Therefore, the answer is yes, the word ""liverpool"" is indeed in the logo.","True"
+"OCR","OCR/0006.jpg","No","To determine the answer, we need to carefully examine the image provided. The image shows a circular sign with a blue background and white text. The text reads ""THE BEATS STORY"" in large, bold letters, with ""LIVER POOL"" in smaller letters at the bottom. The logo features four stylized white silhouettes of people's faces at the top, each with distinct hairstyles and expressions. The sign is mounted on a brick wall, suggesting an outdoor setting, possibly a pub or a local establishment. The colors are simple: deep blue background, white text, and white silhouettes. The logo is centered, with the text and silhouettes arranged symmetrically. The overall design is clean and straightforward, with no additional details or background elements. Based on the text, the answer to the question ""Is the word in the logo 'the beats story liver pool'?"" is no, because the text on the logo is ""THE BEATS STORY"" followed by ""LIVER POOL"" in smaller letters, not ""the beats story liver pool"" as a single phrase. Therefore, the answer is no.","True"
+"OCR","OCR/0007.jpg","Yes","Yes.","True"
+"OCR","OCR/0007.jpg","No","Yes","False"
+"OCR","OCR/0008.jpg","Yes","To determine if the word ""phil's market"" is present in the logo, we need to carefully examine the text on the sign. The sign displays the name ""Phil's"" in large, bold, cream-colored letters. Below this, the word ""MARKET"" is written in a smaller, but still prominent, font. Therefore, the full name of the establishment is ""Phil's Market.""
+
+Step-by-step analysis:
+1. Identify the text on the sign: The sign reads ""Phil's"" followed by ""MARKET.""
+2. Check for the presence of the word ""phil's market"": The text ""Phil's Market"" is clearly visible and is the full name of the establishment.
+3. Conclusion: The word ""phil's market"" is indeed present in the logo.
+
+Therefore, the answer is yes.","True"
+"OCR","OCR/0008.jpg","No","To determine whether the word ""phll's"" is present in the logo, we need to carefully examine the text on the sign. The logo displays the name ""Phll's"" in a stylized font. The word ""phll's"" is clearly visible and is the primary text on the sign. Therefore, the answer is yes.","False"
+"OCR","OCR/0009.jpg","Yes","No.","False"
+"OCR","OCR/0009.jpg","No","No.","True"
+"OCR","OCR/0010.jpg","Yes","To determine whether the name ""High Time Coffee Shop"" is present in the image, we need to carefully examine the text on the sign. The image shows a sign with the words ""COFFEE SHOP"" prominently displayed. The name ""High Time"" is not visible in the text provided. Therefore, the answer is no.","False"
+"OCR","OCR/0010.jpg","No","To determine whether the word ""high tite cofeee shop"" is present in the image, we need to carefully examine the text on the sign. The sign reads ""COFFEE SHOP"" in large, bold letters. The word ""high tite"" is not present in the text. Therefore, the answer is no.","True"
+"artwork","artwork/images/10002.jpg","Yes","Yes. This artwork is a painting.","True"
+"artwork","artwork/images/10256.jpg","Yes","No.","False"
+"artwork","artwork/images/10256.jpg","No","No.","True"
+"artwork","artwork/images/10358.jpg","Yes","Yes.","True"
+"artwork","artwork/images/10358.jpg","No","Yes.","False"
+"artwork","artwork/images/10543.jpg","Yes","No","False"
+"artwork","artwork/images/10543.jpg","No","Yes","False"
+"artwork","artwork/images/10581.jpg","Yes","No","False"
+"artwork","artwork/images/1060.jpg","Yes","No","False"
+"artwork","artwork/images/10881.jpg","Yes","Yes.","True"
+"artwork","artwork/images/10881.jpg","No","Yes.","False"
+"artwork","artwork/images/10970.jpg","Yes","No.","False"
+"artwork","artwork/images/11276.jpg","Yes","Yes.","True"
+"artwork","artwork/images/11276.jpg","No","No.","True"
+"artwork","artwork/images/11331.jpg","Yes","No.","False"
+"artwork","artwork/images/11331.jpg","No","No.","True"
+"artwork","artwork/images/11488.jpg","Yes","No.","False"
+"artwork","artwork/images/11488.jpg","No","No.","True"
+"artwork","artwork/images/11724.jpg","Yes","No","False"
+"artwork","artwork/images/11724.jpg","No","No.","True"
+"celebrity","celebrity/images/tt0032138_shot_0395_img_0.jpg","Yes","No.","False"
+"celebrity","celebrity/images/tt0032138_shot_0395_img_0.jpg","No","No.","True"
+"celebrity","celebrity/images/tt0035423_shot_0464_img_0.jpg","Yes","No.","False"
+"celebrity","celebrity/images/tt0035423_shot_0464_img_0.jpg","No","No.","True"
+"celebrity","celebrity/images/tt0038650_shot_0737_img_1.jpg","Yes","No.","False"
+"celebrity","celebrity/images/tt0038650_shot_0737_img_1.jpg","No","No.","True"
+"celebrity","celebrity/images/tt0047396_shot_0333_img_0.jpg","Yes","No.","False"
+"celebrity","celebrity/images/tt0047396_shot_0333_img_0.jpg","No","No.","True"
+"celebrity","celebrity/images/tt0048545_shot_0124_img_0.jpg","Yes","Yes, the actor inside the red bounding box is Natalie Wood.","True"
+"celebrity","celebrity/images/tt0048545_shot_0124_img_0.jpg","No","Yes, the actor inside the red bounding box is Rebecca Jackson Mendoza.","False"
+"celebrity","celebrity/images/tt0049470_shot_0279_img_0.jpg","Yes","No.","False"
+"celebrity","celebrity/images/tt0049470_shot_0279_img_0.jpg","No","Yes.","False"
+"celebrity","celebrity/images/tt0049730_shot_0273_img_0.jpg","Yes","No.","False"
+"celebrity","celebrity/images/tt0049730_shot_0273_img_0.jpg","No","Yes.","False"
+"celebrity","celebrity/images/tt0052357_shot_0511_img_0.jpg","Yes","No.","False"
+"celebrity","celebrity/images/tt0052357_shot_0511_img_0.jpg","No","No.","True"
+"celebrity","celebrity/images/tt0053221_shot_0197_img_0.jpg","Yes","No, the actor inside the red bounding box is not named John Wayne. The actor's name is not John Wayne.","False"
+"celebrity","celebrity/images/tt0053221_shot_0197_img_0.jpg","No","Yes, the actor inside the red bounding box is named Claude-Oliver Rudolph.","False"
+"celebrity","celebrity/images/tt0054167_shot_0122_img_0.jpg","Yes","No.","False"
+"celebrity","celebrity/images/tt0054167_shot_0122_img_0.jpg","No","No.","True"
+"code_reasoning","code_reasoning/0001.png","No","Yes","False"
+"code_reasoning","code_reasoning/0002.png","Yes","The code provided is a snippet of Python code that prints a string. The code is as follows:
+
+```python
+a = 'a dog/a cat'
+print(a.split('/') [1])
+```
+
+The code uses the `split('/')` method on the string `'a dog/a cat'`, which splits the string at the forward slash character. The result of this split is a list of strings: `['a dog', 'a cat']`. The code then accesses the second element of this list using `[1]`, which is `'a cat'`. Therefore, the output of the code is `'a cat'`.
+
+The question asks if the output of the code is `'a cat'`. The answer is yes.","True"
+"code_reasoning","code_reasoning/0002.png","No","The code provided is a snippet of Python code that includes a comment. The code is not complete and does not contain the word 'a dog'. Therefore, the answer is no.","True"
+"code_reasoning","code_reasoning/0003.png","Yes","The code provided is a snippet of Python code. The code is incomplete and does not contain any print statements. Therefore, it is not possible to determine the output of the code. The code is a fragment and does not execute to produce any output.","False"
+"code_reasoning","code_reasoning/0003.png","No","The output of the code is '1', '2', '4', '5', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124',","False"
+"code_reasoning","code_reasoning/0004.png","Yes","The code provided is a snippet of Python code that uses the `print` function to output the string '3'. The code is written in a monospaced font, which is typical for code formatting. The code is displayed on a black background, and the text is colored in various hues: the numbers 1, 2, 3, 4, 5 are in white, the colon (':') is in blue, and the word 'print' is in blue. The code is written in a simple, readable format, with each line of code on a new line. The code does not contain any additional characters or symbols, and it is a straightforward example of a basic print statement in Python.","False"
+"code_reasoning","code_reasoning/0004.png","No","The code provided is a snippet of Python code that uses the `print` function to output the string '1, 2, 3, 4, 5'. The code is written in a way that suggests it is part of a loop or a sequence generation, but the specific output of the code is not shown. Therefore, the answer to the question is no.","True"
+"code_reasoning","code_reasoning/0005.png","No","Yes","False"
+"code_reasoning","code_reasoning/0006.png","Yes","The code provided is a Python function that uses regular expressions to find all occurrences of the pattern [1-9] followed by a comma and a space, then a number. The pattern [1-9] matches any digit from 1 to 9, and the comma and space match the literal characters. The function returns a list of these matches. The input string is ""1, 2, 3, 4, 5, 6, 7, 8, 9"", which contains the numbers 1 through 9 separated by commas and spaces. The regular expression will find each number from 1 to 9, so the output of the function will be a list containing the numbers 1, 2, 3, 4, 5, 6, 7, 8, 9. Therefore, the answer is yes.","True"
+"code_reasoning","code_reasoning/0006.png","No","The code provided is a Python function that uses regular expressions to find all occurrences of the pattern [1-9] followed by a comma and a space, then a number. The pattern [1-9] matches any digit from 1 to 9, and the comma and space are literal characters. The function returns a list of these matches. The input string is ""1, 2, 3, 4, 5, 6, 7, 8, 9"", which contains the numbers 1 through 9 separated by commas and spaces. The regular expression will match each number individually, so the output of the function will be ['1', '2', '3', '4', '5', '6', '7', '8', '9']. Therefore, the answer to the question is yes.","False"
+"code_reasoning","code_reasoning/0007.png","Yes","The code shown in the image is indeed C++. The code includes the use of the `#include <iostream>` directive, which is a standard header in C++ for input and output operations. The code also uses the `using namespace std;` directive, which is common in C++ to avoid having to qualify standard library names with `std::`. The main function is defined with the `int main()` signature, which is the entry point of a C++ program. The code is written in a simple, straightforward style, which is typical for basic C++ programs. Therefore, the answer is yes.","True"
+"code_reasoning","code_reasoning/0007.png","No","The code shown in the image is indeed Python code. It uses the `include <iostream>` directive, which is a standard header in C++ for input/output operations, and the `using namespace std;` statement, which is common in C++ to avoid having to qualify standard library names with `std::`. The code defines a function `Hello World` that returns 0, and the `main` function calls this function. The code is written in a monospaced font, typical for code, and the syntax is consistent with C++ conventions. Therefore, the answer is yes.","False"
+"code_reasoning","code_reasoning/0008.png","No","Yes","False"
+"code_reasoning","code_reasoning/0009.png","Yes","Yes, the output of the code '36' is correct. The code uses the 'a' variable, which is assigned the value 6, and then multiplies it by 6, resulting in 36.","True"
+"code_reasoning","code_reasoning/0009.png","No","Yes, the output of the code '6' is correct. The code uses the 'a' variable, which is assigned the value 6, and then prints it. Therefore, the output is '6'.","False"
+"code_reasoning","code_reasoning/0010.png","No","Yes","False"
+"code_reasoning","code_reasoning/0011.png","Yes","The code provided is a snippet of Python code that uses the `find()` method to search for the substring '12345' within the string '12345'. The `find()` method returns the index of the first occurrence of the substring, which in this case is 0 because the substring starts at the beginning of the string. Therefore, the output of the code would be '0'.","False"
+"code_reasoning","code_reasoning/0011.png","No","The code provided is a snippet of Python code that uses the `find()` method to search for the substring '1' in the string '12345'. The `find()` method returns the index of the first occurrence of the substring. Since the substring '1' is indeed present at the beginning of the string, the output of the code would be '0'. Therefore, the answer is yes.","False"
+"code_reasoning","code_reasoning/0012.png","Yes","The code provided in the image is a Python function named 'working_hard' that takes a 'job' parameter. The function uses a conditional statement to check if the 'job' is 'playing hard'. If it is, the function returns 'playing hard'; otherwise, it returns 'playing hard'. The code is written in a simple and straightforward manner, with no additional comments or explanations. Therefore, the output of the code would be 'playing hard'.","False"
+"code_reasoning","code_reasoning/0012.png","No","The code provided in the image is a Python function named 'job' that takes a 'job' parameter. The function uses a conditional statement to check if the 'job' is 'playing hard'. If it is, the function returns 'playing hard'; otherwise, it returns 'playing hard'. The code is written in a simple and straightforward manner, with no additional comments or explanations. Therefore, the output of the code would be 'playing hard'.","True"
+"color","color/000000006723.jpg","Yes","Yes.","True"
+"color","color/000000006723.jpg","No","Yes.","False"
+"color","color/000000008277.jpg","Yes","Yes, there is a white plate at the following normalized coordinates (x, y, w, h): (0.49999, 0.50000, 0.99998, 0.99996).","True"
+"color","color/000000008277.jpg","No","Yes, there is a yellow plate at the following normalized coordinates (x, y, w, h): (0.49999, 0.50000, 0.99998, 0.99996).","False"
+"color","color/000000012120.jpg","Yes","Yes.","True"
+"color","color/000000012120.jpg","No","Yes.","False"
+"color","color/000000014831.jpg","Yes","To determine if there is a brown and white animal in the image, we need to carefully observe the visual elements present. 
+
+1. **Observation of Color and Pattern:**
+   - The image shows a close-up view of a textured surface.
+   - The surface has a pattern of alternating light and dark brown lines.
+   - The lines are not uniform and appear to be a natural, organic pattern.
+
+2. **Identification of Animal Features:**
+   - The pattern resembles the fur of an animal.
+   - The coloration is consistent with the fur of a brown and white animal, such as a horse, cow, or a certain breed of dog.
+   - The texture and pattern are similar to the fur of these animals.
+
+3. **Conclusion:**
+   - Based on the color and pattern observed, it is reasonable to conclude that the image depicts a brown and white animal.
+
+Therefore, the answer is yes.","True"
+"color","color/000000014831.jpg","No","To determine if there is a green and red animal in the image, we need to carefully observe the visual elements present. 
+
+1. **Observation of Colors:**
+   - The image shows a close-up of a textured surface, which appears to be a piece of fabric or a similar material.
+   - The color palette in the image includes shades of green and red.
+
+2. **Identification of Animals:**
+   - The image does not depict any animal. Instead, it focuses on the texture and color of the material.
+
+3. **Conclusion:**
+   - Based on the visual evidence, there is no animal present in the image. The colors green and red are part of the material's design, not an animal.
+
+Therefore, the answer is no.","True"
+"color","color/000000028993.jpg","Yes","Yes, there are 2 yellow poles at the following normalized coordinates (x, y, w, h): (0.02300, 0.30000, 0.04600, 0.05200), (0.01600, 0.30000, 0.03200, 0.06400).","True"
+"color","color/000000028993.jpg","No","Yes, there are 2 blue poles at the following normalized coordinates (x, y, w, h): (0.02300, 0.30000, 0.04600, 0.05200), (0.07100, 0.30000, 0.04800, 0.05200).","False"
+"color","color/000000029393.jpg","Yes","Yes.","True"
+"color","color/000000029393.jpg","No","Yes.","False"
+"color","color/000000035770.jpg","Yes","No.","False"
+"color","color/000000035770.jpg","No","No.","True"
+"color","color/000000038118.jpg","Yes","Yes.","True"
+"color","color/000000038118.jpg","No","Yes.","False"
+"color","color/000000047112.jpg","Yes","Yes.","True"
+"color","color/000000047112.jpg","No","Yes.","False"
+"color","color/000000047121.jpg","Yes","Yes.","True"
+"color","color/000000047121.jpg","No","Yes.","False"
+"commonsense_reasoning","commonsense_reasoning/0001.png","Yes","Yes, you should pay $29.42 for your taxi ride.","True"
+"commonsense_reasoning","commonsense_reasoning/0001.png","No","Yes, you should pay $32.42 for your taxi ride.","False"
+"commonsense_reasoning","commonsense_reasoning/0002.png","Yes","Yes.","True"
+"commonsense_reasoning","commonsense_reasoning/0002.png","No","Yes.","False"
+"commonsense_reasoning","commonsense_reasoning/0003.png","Yes","To determine the winner of the finger-guessing game, we need to count the number of fingers in each hand. The left hand has five fingers, and the right hand also has five fingers. Since both hands have the same number of fingers, the game is a tie. Therefore, the answer is no, the right side of the picture did not win.","False"
+"commonsense_reasoning","commonsense_reasoning/0003.png","No","To determine if the left side of the picture won in the game of finger-guessing, we need to analyze the image. The image shows two hands: the left hand is clenched into a fist with the thumb folded over the fingers, and the right hand is open with all five fingers extended upward. In the context of a finger-guessing game, typically, the hand that is open with all fingers extended is considered to have won. Therefore, the right side of the picture won the game.","False"
+"commonsense_reasoning","commonsense_reasoning/0004.png","Yes","No. The fruit in the picture does not look stale. It appears fresh, with a smooth texture and vibrant color, suggesting it is not spoiled.","False"
+"commonsense_reasoning","commonsense_reasoning/0004.png","No","No. The fruit in the picture does not look very fresh. It appears to be a bit wilted and has a brownish, dried appearance, which is not typical of fresh fruit.","True"
+"commonsense_reasoning","commonsense_reasoning/0005.png","No","Yes","False"
+"commonsense_reasoning","commonsense_reasoning/0006.png","Yes","No","False"
+"commonsense_reasoning","commonsense_reasoning/0007.png","Yes","Yes, the tool in the picture is an appropriate choice for cleaning the house. It appears to be a broom with a yellow plastic head and a wooden handle, which is commonly used for sweeping floors. The broom is positioned on a patch of green grass, suggesting an outdoor setting, and the grass is a mix of light and dark green, indicating it might be a well-maintained lawn. The tool is centered in the frame, with the broom head centered, bristles facing downward, and the handle extending upward, ready for use. The scene is lit by natural sunlight, casting soft shadows under the broom, which implies it is daytime, likely a sunny day. The grass has some small brown patches, possibly from dryness or foot traffic, adding texture to the background. The perspective is eye-level, focusing closely on the broom, making it the clear focal point. The overall mood is practical and everyday, targeting homeowners or homeowners looking for a common household cleaning tool. No text is present, and the season is likely spring or summer, given the green grass. The color palette is earthy, with the yellow of the broom head contrasting against the blue of the handle and the green of the grass, creating a balanced, functional image. Small details include the slight wear on the broom bristles and the smooth texture of the wooden handle, suggesting it has been used before.","False"
+"commonsense_reasoning","commonsense_reasoning/0007.png","No","Based on the image, the tool in the picture is a broom. Brooms are typically used for cleaning, sweeping, or moving objects, which aligns with the purpose of transporting something. Therefore, the answer is yes.","False"
+"commonsense_reasoning","commonsense_reasoning/0008.png","Yes","No.","False"
+"commonsense_reasoning","commonsense_reasoning/0008.png","No","No.","True"
+"commonsense_reasoning","commonsense_reasoning/0009.png","Yes","No","False"
+"commonsense_reasoning","commonsense_reasoning/0010.png","No","Yes, the venue in the picture is a good choice.","False"
+"commonsense_reasoning","commonsense_reasoning/0011.png","Yes","No.","False"
+"commonsense_reasoning","commonsense_reasoning/0011.png","No","No.","True"
+"commonsense_reasoning","commonsense_reasoning/0012.png","Yes","Yes, the venue in the picture is a good choice. It appears to be a well-equipped classroom with a clean, organized layout, which is suitable for studying. The presence of multiple tables and chairs suggests that it can accommodate a group of students, and the whiteboard and projector screen indicate that it is equipped for presentations or lectures. The lighting is bright, which is essential for reading and writing, and the overall atmosphere seems conducive to learning.","True"
+"commonsense_reasoning","commonsense_reasoning/0012.png","No","Yes, the venue in the picture is a good choice for exercise. It appears to be a well-equipped space with multiple tables and chairs arranged in a way that allows for group activities or individual workouts. The presence of a whiteboard and a projector screen suggests that the space is versatile and can accommodate various types of exercise classes or meetings. The lighting is bright, which is essential for visibility during workouts. The carpeted floor provides a comfortable surface for walking or standing exercises, and the overall layout is spacious enough to accommodate a group of people.","False"
+"count","count/000000006040.jpg","Yes","Yes.","True"
+"count","count/000000006040.jpg","No","Yes.","False"
+"count","count/000000044279.jpg","Yes","Yes.","True"
+"count","count/000000044279.jpg","No","Yes.","False"
+"count","count/000000067213.jpg","Yes","Yes.","True"
+"count","count/000000067213.jpg","No","Yes.","False"
+"count","count/000000071226.jpg","Yes","Yes.","True"
+"count","count/000000071226.jpg","No","Yes.","False"
+"count","count/000000097994.jpg","Yes","Yes.","True"
+"count","count/000000097994.jpg","No","Yes.","False"
+"count","count/000000195918.jpg","Yes","Yes.","True"
+"count","count/000000195918.jpg","No","Yes.","False"
+"count","count/000000236721.jpg","Yes","Yes.","True"
+"count","count/000000236721.jpg","No","Yes.","False"
+"count","count/000000261712.jpg","Yes","Yes.","True"
+"count","count/000000261712.jpg","No","Yes.","False"
+"count","count/000000274066.jpg","Yes","Yes.","True"
+"count","count/000000274066.jpg","No","Yes.","False"
+"count","count/000000276434.jpg","Yes","Yes.","True"
+"count","count/000000276434.jpg","No","Yes.","False"
+"existence","existence/000000006040.jpg","Yes","Yes.","True"
+"existence","existence/000000006040.jpg","No","Yes.","False"
+"existence","existence/000000006471.jpg","Yes","Yes.","True"
+"existence","existence/000000006471.jpg","No","No.","True"
+"existence","existence/000000007108.jpg","Yes","No.","False"
+"existence","existence/000000007108.jpg","No","Yes.","False"
+"existence","existence/000000007816.jpg","Yes","Yes.","True"
+"existence","existence/000000007816.jpg","No","Yes.","False"
+"existence","existence/000000007977.jpg","Yes","Yes.","True"
+"existence","existence/000000007977.jpg","No","Yes.","False"
+"existence","existence/000000008844.jpg","Yes","Yes.","True"
+"existence","existence/000000008844.jpg","No","Yes.","False"
+"existence","existence/000000009590.jpg","Yes","Yes.","True"
+"existence","existence/000000009590.jpg","No","Yes.","False"
+"existence","existence/000000010363.jpg","Yes","Yes.","True"
+"existence","existence/000000010363.jpg","No","Yes.","False"
+"existence","existence/000000011197.jpg","Yes","No.","False"
+"existence","existence/000000011197.jpg","No","No.","True"
+"existence","existence/000000015254.jpg","Yes","Yes.","True"
+"existence","existence/000000015254.jpg","No","Yes.","False"
+"landmark","landmark/images/0006adf999ccc899.jpg","Yes","Yes.","True"
+"landmark","landmark/images/0006adf999ccc899.jpg","No","No.","True"
+"landmark","landmark/images/0015309638e5a9b1.jpg","Yes","No.","False"
+"landmark","landmark/images/0015309638e5a9b1.jpg","No","No.","True"
+"landmark","landmark/images/001f0bfe8464254a.jpg","Yes","No.","False"
+"landmark","landmark/images/001f0bfe8464254a.jpg","No","No.","True"
+"landmark","landmark/images/0022666a36b80ea5.jpg","Yes","No.","False"
+"landmark","landmark/images/0022666a36b80ea5.jpg","No","No.","True"
+"landmark","landmark/images/0023bd687cbc0a44.jpg","Yes","Yes.","True"
+"landmark","landmark/images/0023bd687cbc0a44.jpg","No","Yes.","False"
+"landmark","landmark/images/00261324328490fc.jpg","Yes","Yes.","True"
+"landmark","landmark/images/00261324328490fc.jpg","No","No.","True"
+"landmark","landmark/images/002ae473a76362a6.jpg","Yes","Yes.","True"
+"landmark","landmark/images/002ae473a76362a6.jpg","No","Yes.","False"
+"landmark","landmark/images/003f8af9477a8eb8.jpg","Yes","Yes, this is a photo of Le Destroit, a historic village in the municipality of Sainte-Anne-de-Beaupré, Quebec, Canada.","True"
+"landmark","landmark/images/003f8af9477a8eb8.jpg","No","Yes.","False"
+"landmark","landmark/images/004543cec064cd0b.jpg","Yes","Yes.","True"
+"landmark","landmark/images/004543cec064cd0b.jpg","No","No.","True"
+"landmark","landmark/images/004beea6937b3a8c.jpg","Yes","Yes.","True"
+"landmark","landmark/images/004beea6937b3a8c.jpg","No","Yes.","False"
+"numerical_calculation","numerical_calculation/0001.png","Yes","The image shows a handwritten equation on lined paper: ""1 5 \times 1 5 = "" with a horizontal line drawn below it. The equation represents the multiplication of 1.5 by 1.5, which equals 2.25. The paper has a light gray, slightly textured surface with faint horizontal lines, and the writing is in black ink. The lines are evenly spaced, creating a grid-like background. The equation is centered on the page, with the numbers and symbols clearly visible. The simplicity of the image suggests it might be a math problem or a note, targeting students learning basic arithmetic. The focus is on the multiplication of decimals, a fundamental math concept. The lighting is even, with no shadows, making the text easy to read. The target audience is likely students learning multiplication, as the problem is straightforward and the presentation is clear.","False"
+"numerical_calculation","numerical_calculation/0001.png","No","The image shows a handwritten equation on lined paper: ""1 5 \times 1 5 = "" with a horizontal line drawn below it. The numbers and symbols are in black ink, with the ""15"" written in a slightly slanted, casual style. The paper has a light gray, textured surface, and the lines are evenly spaced, suggesting it might be a notebook or a piece of lined paper. The equation is centered on the page, with the multiplication symbol and the two ""15""s aligned vertically. The simplicity of the image focuses attention on the arithmetic operation, which is 15 multiplied by 15. The handwriting is clear but not perfectly neat, with slight variations in letter size and spacing, indicating it was written by hand. The overall composition is minimal, with no other elements present, making the focus solely on the mathematical expression.","True"
+"numerical_calculation","numerical_calculation/0002.png","Yes","3 4 0 = 1 2 0 = 1 2 0","False"
+"numerical_calculation","numerical_calculation/0002.png","No","1 1 2 0 = 1 2 0","False"
+"numerical_calculation","numerical_calculation/0003.png","Yes","1 9 + 3 6","False"
+"numerical_calculation","numerical_calculation/0003.png","No","1 9 + 3 6","False"
+"numerical_calculation","numerical_calculation/0004.png","Yes","0 + 7 \times 2 = 1 4","False"
+"numerical_calculation","numerical_calculation/0004.png","No","0 + 7 \times 2 = 1 4","False"
+"numerical_calculation","numerical_calculation/0005.png","Yes","No","False"
+"numerical_calculation","numerical_calculation/0006.png","No","Yes","False"
+"numerical_calculation","numerical_calculation/0007.png","Yes","1 4 + 3 5 =","False"
+"numerical_calculation","numerical_calculation/0007.png","No","1 4 + 3 5 =","False"
+"numerical_calculation","numerical_calculation/0008.png","No","Yes","False"
+"numerical_calculation","numerical_calculation/0009.png","Yes","1 + a ^ { 3 } = 9","False"
+"numerical_calculation","numerical_calculation/0009.png","No","1 + a ^ { 3 } = 9","False"
+"numerical_calculation","numerical_calculation/0010.png","Yes","1 2 + 3 = 5","False"
+"numerical_calculation","numerical_calculation/0010.png","No","1 2 + 3 = 5","False"
+"numerical_calculation","numerical_calculation/0011.png","No","Yes, the area of the parallelogram in the picture is equal to 6.","False"
+"numerical_calculation","numerical_calculation/0012.png","No","Yes","False"
+"numerical_calculation","numerical_calculation/0013.png","Yes","No","False"
+"position","position/000000006471.jpg","Yes","Yes.","True"
+"position","position/000000006471.jpg","No","No.","True"
+"position","position/000000007281.jpg","Yes","Yes.","True"
+"position","position/000000007281.jpg","No","Yes.","False"
+"position","position/000000014038.jpg","Yes","Yes.","True"
+"position","position/000000014038.jpg","No","Yes.","False"
+"position","position/000000031248.jpg","Yes","To determine if there is a sofa in the middle of potted plants in the image, we need to carefully examine the image provided. 
+
+1. Identify the main elements in the image: The image shows a living room with a fireplace, bookshelves, and a fireplace. There are also potted plants visible in the room.
+2. Locate the sofa: The sofa is positioned in the center of the image, directly in front of the fireplace.
+3. Check the position of the potted plants: The potted plants are placed on either side of the sofa, not in the middle.
+
+Therefore, the answer is: No, there is no sofa in the middle of potted plants in the image. The sofa is in the center of the image, with potted plants on either side of it.","False"
+"position","position/000000031248.jpg","No","To determine if there is a sofa in the right side of the potted plants in the image, we need to carefully observe the arrangement of objects in the image.
+
+1. Identify the potted plants: The image shows a wall with built-in bookshelves on both sides. Between the bookshelves, there are several potted plants placed on small wooden tables.
+
+2. Locate the right side of the image: The right side of the image is where the second set of bookshelves and potted plants is situated.
+
+3. Check for a sofa: Upon examining the right side of the image, we see that there is no sofa present. The area is occupied by bookshelves and potted plants, but no sofa is visible.
+
+Therefore, the answer is: No, there is no sofa in the right side of the potted plants in the image.","True"
+"position","position/000000048504.jpg","Yes","To determine if the gray elephant is in front of the brown elephant, we need to carefully observe the positions of the elephants in the image. 
+
+1. Identify the elephants: There are two elephants in the image, one gray and one brown.
+2. Locate their positions: The gray elephant is positioned to the left of the brown elephant.
+3. Determine the relative positions: Since the gray elephant is to the left of the brown elephant, it is indeed in front of the brown elephant.
+
+Therefore, the answer is yes.","True"
+"position","position/000000048504.jpg","No","To determine if the brown elephant is in front of the gray elephant, we need to carefully observe the positions of the elephants in the image. 
+
+1. Identify the elephants: There are two elephants in the image, one brown and one gray.
+2. Determine their positions: The brown elephant is positioned to the left of the gray elephant.
+3. Confirm the relative positions: Since the brown elephant is to the left of the gray elephant, it is indeed in front of the gray elephant.
+
+Therefore, the answer is yes.","False"
+"position","position/000000052007.jpg","Yes","Yes.","True"
+"position","position/000000052007.jpg","No","Yes.","False"
+"position","position/000000056127.jpg","Yes","Yes.","True"
+"position","position/000000056127.jpg","No","Yes.","False"
+"position","position/000000062025.jpg","Yes","No.","False"
+"position","position/000000062025.jpg","No","No.","True"
+"position","position/000000062808.jpg","Yes","Yes.","True"
+"position","position/000000062808.jpg","No","To determine if the phone is under the pizza in the image, we need to carefully observe the objects present. 
+
+1. Identify the pizza: The pizza is located on a metal tray in the center of the image.
+2. Look for the phone: The phone is not visible in the image. It is not under the pizza; instead, it is being held by the person on the right.
+
+Therefore, the answer is no, the phone is not under the pizza.","True"
+"position","position/000000067213.jpg","Yes","Yes.","True"
+"position","position/000000067213.jpg","No","Yes.","False"
+"posters","posters/images/tt0048028.jpg","Yes","Yes.","True"
+"posters","posters/images/tt0048028.jpg","No","No.","True"
+"posters","posters/images/tt0053221.jpg","Yes","No.","False"
+"posters","posters/images/tt0053221.jpg","No","No.","True"
+"posters","posters/images/tt0062622.jpg","Yes","No.","False"
+"posters","posters/images/tt0062622.jpg","No","No.","True"
+"posters","posters/images/tt0063442.jpg","Yes","No.","False"
+"posters","posters/images/tt0063442.jpg","No","No.","True"
+"posters","posters/images/tt0065724.jpg","Yes","Yes.","True"
+"posters","posters/images/tt0065724.jpg","No","Yes.","False"
+"posters","posters/images/tt0067116.jpg","Yes","Yes.","True"
+"posters","posters/images/tt0067116.jpg","No","Yes.","False"
+"posters","posters/images/tt0067140.jpg","Yes","No.","False"
+"posters","posters/images/tt0067140.jpg","No","No.","True"
+"posters","posters/images/tt0067185.jpg","Yes","No.","False"
+"posters","posters/images/tt0067185.jpg","No","No.","True"
+"posters","posters/images/tt0068646.jpg","Yes","No.","False"
+"posters","posters/images/tt0068646.jpg","No","No.","True"
+"posters","posters/images/tt0070291.jpg","Yes","No.","False"
+"posters","posters/images/tt0070291.jpg","No","No.","True"
+"scene","scene/images/Places365_val_00000001.jpg","Yes","No.","False"
+"scene","scene/images/Places365_val_00000001.jpg","No","Yes.","False"
+"scene","scene/images/Places365_val_00000002.jpg","Yes","Yes.","True"
+"scene","scene/images/Places365_val_00000002.jpg","No","Yes.","False"
+"scene","scene/images/Places365_val_00000003.jpg","Yes","Yes.","True"
+"scene","scene/images/Places365_val_00000003.jpg","No","Yes.","False"
+"scene","scene/images/Places365_val_00000004.jpg","Yes","Yes.","True"
+"scene","scene/images/Places365_val_00000004.jpg","No","Yes, the image depicts a scene in a computer room, as indicated by the presence of a computer monitor in the foreground, which is a common feature in such settings. The background shows a well-maintained green lawn, suggesting an outdoor area, possibly a campus or park, which is typical for computer rooms located in such environments. The person in the foreground is facing away from the camera, wearing a shirt and pants, and appears to be engaged in a task, possibly related to computer work. The lighting is bright, consistent with daytime, and the overall atmosphere is calm and focused. The perspective is from behind the person, with the computer monitor in sharp focus in the foreground and the background figures slightly blurred, creating a sense of depth. The color palette includes the vibrant green of the grass, the neutral tones of the person’s clothing, and the metallic sheen of the computer monitor, contributing to a professional and organized atmosphere. The spatial arrangement places the computer room in the background, with the person positioned to the right, emphasizing the connection between the individual and the technology. The time of day seems to be midday, given the bright, even lighting, and the season is likely spring or summer, as the trees in the background have full foliage. The target audience for this image might be students, educators, or professionals interested in technology or campus life, as the scene conveys a typical day in a computer lab. Small details like the person’s relaxed posture and the computer’s keyboard add to the realistic, everyday feel of the image.","False"
+"scene","scene/images/Places365_val_00000005.jpg","Yes","No. The image depicts a coastal scene with a large, weathered rock formation in the foreground, featuring a natural archway. The rock is a warm beige color with rough, textured surfaces, and it stands prominently in the shallow, clear water of a tidal area. In the background, there are smaller rocks and patches of green seaweed floating in the water, with a sandy beach visible further back. The sky is clear and blue, suggesting a sunny day, likely during midday given the bright, direct lighting that casts soft shadows under the arch. The perspective is eye-level, focusing on the arch as the focal point, with the rock formation dominating the left side of the image and the beach and water stretching to the right. The overall mood is serene and natural, with the arch symbolizing a connection between land and sea, a common feature in coastal landscapes. The scene likely targets nature enthusiasts or travelers interested in coastal geology, as it highlights the beauty of natural rock formations and tidal environments.","False"
+"scene","scene/images/Places365_val_00000005.jpg","No","No. The image depicts a coastal scene with a large, weathered rock formation in the foreground, its rough, tan surface marked by erosion, and a smaller rock formation further back. The foreground features a shallow, muddy puddle with green algae, surrounded by patches of green grass and small rocks. In the background, there are two larger rock formations: one tall and thin, the other shorter and wider, both covered in patches of green moss. The sky is clear and blue, suggesting a sunny day, likely midday given the bright, even lighting that casts soft shadows under the rocks. The perspective is eye-level, focusing on the rock formations with the puddle and grass in the foreground, creating a sense of depth. The color palette includes earthy tones—tan, green, and blue—enhancing the natural, rugged atmosphere. The scene conveys a peaceful, serene mood, typical of a coastal area, possibly a beach or rocky shore, with no people or text visible. The time of day appears to be midday, and the season might be summer or spring, given the clear sky and lack of snow. The target audience could be nature enthusiasts or travelers seeking scenic landscapes. Small details include the texture of the rock, with visible cracks and moss, and the way the water reflects the sky, adding to the image’s tranquility.","True"
+"scene","scene/images/Places365_val_00000006.jpg","Yes","Yes.","True"
+"scene","scene/images/Places365_val_00000006.jpg","No","Yes.","False"
+"scene","scene/images/Places365_val_00000007.jpg","Yes","Yes.","True"
+"scene","scene/images/Places365_val_00000007.jpg","No","Yes.","False"
+"scene","scene/images/Places365_val_00000008.jpg","Yes","Yes.","True"
+"scene","scene/images/Places365_val_00000008.jpg","No","Yes.","False"
+"scene","scene/images/Places365_val_00000009.jpg","Yes","Yes.","True"
+"scene","scene/images/Places365_val_00000009.jpg","No","Yes.","False"
+"scene","scene/images/Places365_val_00000010.jpg","Yes","Yes.","True"
+"scene","scene/images/Places365_val_00000010.jpg","No","Yes.","False"
+"text_translation","text_translation/0001.png","Yes","Yes, it is appropriate to translate the Chinese text ""老味道"" as ""classic taste"" in the picture. The characters ""老"" (lǎo) mean ""old"" or ""traditional,"" and ""味道"" (wèidào) means ""taste"" or ""flavor,"" so together they convey the meaning of ""classic taste"" or ""traditional flavor."" This translation accurately reflects the intended meaning of the original Chinese text, which likely refers to a long-standing, established taste or flavor. The image likely aims to evoke a sense of nostalgia or timelessness associated with traditional flavors, making the translation both accurate and contextually appropriate.","True"
+"text_translation","text_translation/0001.png","No","Yes, it is appropriate to translate the Chinese text ""老味道"" as ""classic strawberry flavor"" in the picture. The characters ""老味道"" directly translate to ""old flavor"" or ""classic flavor"" in English, and ""草莓"" is ""strawberry,"" so combining them gives ""classic strawberry flavor."" The image likely shows a product label or packaging with this text, indicating a strawberry-flavored item with a traditional or classic taste. The simple, bold font and black color on a white background make the text clear and easy to read, targeting consumers looking for familiar, nostalgic strawberry products. The image focuses solely on the text, with no additional elements, emphasizing the product name and flavor description.","False"
+"text_translation","text_translation/0002.png","Yes","Yes, it is appropriate to translate the Chinese text ""美味的晚餐"" as ""a delicious dinner"" in the picture. The text is the main focus, and the translation accurately conveys the intended meaning of the phrase.","True"
+"text_translation","text_translation/0002.png","No","Yes, it is appropriate to translate the Chinese text ""汉堡和薯片"" as ""hamburger and chips"" in the picture. The text is the Chinese characters for ""hamburger"" and ""chips,"" which are commonly used food items in English-speaking countries, so the translation is accurate and relevant to the context of the image, which likely shows a food item. The characters are clear and legible, making the translation straightforward. The image itself is a simple, eye-level view of a food item, with no additional elements, focusing solely on the text. The color of the text is black, which contrasts with the white background, ensuring readability. The target audience is likely general, as the image is simple and the translation is direct, making it accessible to a broad range of people. There are no additional details, symbols, or context provided, so the focus remains on the food item and its name.","False"
+"text_translation","text_translation/0003.png","No","Yes","False"
+"text_translation","text_translation/0004.png","No","Yes","False"
+"text_translation","text_translation/0005.png","Yes","Yes, it is appropriate to translate the Chinese text ""感到开心"" into English as ""feeling happy"" in the picture. The text is a direct expression of emotion, and the translation accurately conveys the intended sentiment.","True"
+"text_translation","text_translation/0005.png","No","Yes, it is appropriate to translate the Chinese in the image into English 'feeling bored' in the picture.","False"
+"text_translation","text_translation/0006.png","No","Yes, it is appropriate to translate the Chinese in the image into English as 'be filled with intrigue'. The Chinese text is ""充满神秘"" which translates to ""be filled with intrigue"" in English. This translation accurately conveys the meaning of the original text, which suggests a sense of curiosity or mystery.","False"
+"text_translation","text_translation/0007.png","No","No.","True"
+"text_translation","text_translation/0008.png","Yes","是的，非常骄傲。","False"
+"text_translation","text_translation/0008.png","No","是的，非常感谢","False"
+"text_translation","text_translation/0009.png","Yes","No.","False"
+"text_translation","text_translation/0009.png","No","No.","True"
+"text_translation","text_translation/0010.png","Yes","Yes, it is appropriate to translate the Chinese text ""问的花"" as ""the flower you asked about"" in the picture. The characters ""问的花"" translate directly to ""the flower you asked about"" in English, which is a natural and accurate translation. The font is bold and black, making the text stand out clearly against a plain white background. The simplicity of the design focuses attention on the text, suggesting it is likely a sign, label, or title. The lack of additional elements keeps the message straightforward, targeting a general audience needing clear communication. The image’s context is likely informational, such as a sign for a garden or a place named ""the flower you asked about,"" though without more context, the exact purpose is unclear. The target audience could be visitors seeking a specific flower, as the translation implies a direct inquiry.","True"
+"text_translation","text_translation/0010.png","No","Yes, it is appropriate to translate the Chinese text ""问的花"" as ""the flower that asks"" in the picture.","False"
+"text_translation","text_translation/0011.png","Yes","Yes, the Chinese text ""困难的工作"" translates to ""a difficult work"" in English.","True"
+"text_translation","text_translation/0011.png","No","Yes, the Chinese text ""阿难的工作"" translates to ""Anan's work"" in English. The characters are ""阿难"" (Anan), a common name in Chinese, and ""的工作"" (de gongzuo), which means ""work"" or ""job"". The phrase ""阿难的工作"" is a direct translation of ""Anan's work"" and is likely a title or label referring to Anan's professional activities. The font is bold and clear, suggesting it might be a sign, label, or heading. The simple composition with no additional elements focuses attention on the text, making it easy to read. The black text on a white background creates high contrast, ensuring readability. There are no people, objects, or environmental elements, so context is limited to the text itself. The target audience could be general, as the phrase is straightforward and not overly technical. No time, season, or emotional cues are present, as the image is purely informational.","False"
+"text_translation","text_translation/0012.png","No","Yes","False"
+"text_translation","text_translation/0013.png","Yes","Yes, it is appropriate to translate the Chinese in the image into English as 'feeling frustrated'.","True"
