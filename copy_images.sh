@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# 可覆写：SRC_ROOT="/your/source"
 SRC_ROOT="${SRC_ROOT:-/pfs/shared_eval/datasets/images/MME}"
 SITE_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -20,15 +19,19 @@ total = 0
 copied = 0
 missing = 0
 
+def is_abs_path(p: str) -> bool:
+    p = p.strip()
+    return p.startswith("/") or (len(p) > 1 and p[1] == ":" and ("\\" in p or "/" in p))
+
 with manifest.open(newline='', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     for row in reader:
-        rel = (row.get("image_relpath") or "").strip().strip('"')
+        rel = (row.get("image_relpath") or "").replace("\r\n","\n").replace("\r","\n").strip().strip('"')
         if not rel:
             continue
         total += 1
-        src = Path(SRC_ROOT) / rel
-        dst = dst_root / rel
+        src = Path(rel) if is_abs_path(rel) else (Path(SRC_ROOT) / rel)
+        dst = dst_root / rel.lstrip("/")
         dst.parent.mkdir(parents=True, exist_ok=True)
         if src.exists():
             try:

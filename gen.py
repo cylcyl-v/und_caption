@@ -1,26 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-build_mme_gallery.py  (E/F 强制版，F 列整格作为 prediction；保留换行)
+build_mme_gallery.py  (E/F 强制版 + D 列 question；F 整格作为 prediction，保留换行)
 
-变更点：
-- 强制把 Excel 的 E 列作为真解（gt），F 列作为模型预测（pred）。
-  （即 1-based 第 5、6 列；0-based 索引 4、5）
-- F 列每个单元格整体作为 prediction，保留内部换行，不做切分。
-- 判错时仅去除两端空白并规范换行（\\r\\n -> \\n），不破坏内部换行。
-- 写出 CSV 时对所有字段加引号（QUOTE_ALL）以确保换行安全。
-- 类别和图片路径仍自动检测，也可手动覆盖。
-
-用法示例：
-python build_mme_gallery.py \
-  --table /pfs/lichenyi/station/VLMEval/outputs/mme/UnifyModelEval/train_qwendit_unify_interleave_stage1p5/0000040000/UnifyModelEval_MME_auxmatch.xlsx \
-  --src-image-root /pfs/shared_eval/datasets/images/MME \
-  --output-dir ./site \
-  --tag train_qwendit_unify_interleave_stage1p5 \
-  --iter 40000 \
-  --per-class 20 \
-  --zip
+- E 列作为真解（gt），F 列作为模型预测（pred），D 列作为 question。
+- F / D 单元格整格使用，保留内部换行；CSV 以 QUOTE_ALL 输出保障换行安全。
+- 判错：仅对 pred / gt 做轻量规范化（CRLF->LF，strip），不改动 question。
 """
+
 import argparse
 import os
 from pathlib import Path
@@ -55,7 +42,6 @@ a:hover{text-decoration:underline}
 COPY_IMAGES_SH = r"""#!/usr/bin/env bash
 set -euo pipefail
 
-# 可覆写：SRC_ROOT="/your/source"
 SRC_ROOT="${SRC_ROOT:-/pfs/shared_eval/datasets/images/MME}"
 SITE_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -74,15 +60,19 @@ total = 0
 copied = 0
 missing = 0
 
+def is_abs_path(p: str) -> bool:
+    p = p.strip()
+    return p.startswith("/") or (len(p) > 1 and p[1] == ":" and ("\\" in p or "/" in p))
+
 with manifest.open(newline='', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     for row in reader:
-        rel = (row.get("image_relpath") or "").strip().strip('"')
+        rel = (row.get("image_relpath") or "").replace("\r\n","\n").replace("\r","\n").strip().strip('"')
         if not rel:
             continue
         total += 1
-        src = Path(SRC_ROOT) / rel
-        dst = dst_root / rel
+        src = Path(rel) if is_abs_path(rel) else (Path(SRC_ROOT) / rel)
+        dst = dst_root / rel.lstrip("/")
         dst.parent.mkdir(parents=True, exist_ok=True)
         if src.exists():
             try:
@@ -144,22 +134,22 @@ def detect_columns(df: pd.DataFrame) -> dict:
     return picked
 
 def norm_for_compare(s):
-    """保留内部换行，只做轻量规范化以避免尾部空格/CRLF 影响判等。"""
+    """用于 pred/gt 的轻量规范化：保留内部换行，CRLF->LF，然后 strip。"""
     if s is None:
         return ""
     s = str(s)
     s = s.replace("\r\n", "\n").replace("\r", "\n")
-    # 仅去掉首尾空白，不删除内部换行
     return s.strip()
 
 def build_site(df: pd.DataFrame, per_class: int, output_dir: Path, tag: str, it: int,
                src_image_root: Optional[str], zip_output: bool,
                col_class: Optional[str], col_image: Optional[str]) -> None:
-    # 强制 E/F 作为 gt / pred
+    # 强制 D/E/F 列：question / gt / pred
     if len(df.columns) < 6:
-        raise ValueError("表格列数不足：需要至少 6 列以使用 E/F 作为真解/预测。")
-    gt_col = df.columns[4]   # E
-    pred_col = df.columns[5] # F（整格 prediction，保留内部换行）
+        raise ValueError("表格列数不足：需要至少 6 列以使用 D/E/F。")
+    q_col = df.columns[3]   # D question
+    gt_col = df.columns[4]  # E gt
+    pred_col = df.columns[5]# F pred（整格，保留换行）
 
     # 自动/覆盖 其他列
     picks_auto = detect_columns(df)
@@ -174,7 +164,7 @@ def build_site(df: pd.DataFrame, per_class: int, output_dir: Path, tag: str, it:
 
     (output_dir / "assets" / "styles.css").write_text(CSS_TEXT, encoding="utf-8")
 
-    # 错误样例：pred != gt（保留内部换行，仅规范换行符与首尾空白）
+    # 错误样例：pred != gt（仅比较规范化后的文本）
     cmp_pred = df[pred_col].apply(norm_for_compare)
     cmp_gt = df[gt_col].apply(norm_for_compare)
     wrong_mask = (cmp_pred != cmp_gt)
@@ -198,12 +188,12 @@ def build_site(df: pd.DataFrame, per_class: int, output_dir: Path, tag: str, it:
         manifest_rows.append({
             "class": keep(r.get(picks_auto["class"], "")),
             "image_relpath": keep(r.get(picks_auto["image"], "")),
+            "question": keep(r.get(q_col, "")),  # 新增：D 列
             "gt": keep(r.get(gt_col, "")),
-            "pred": keep(r.get(pred_col, "")),  # 整格 prediction，含换行
+            "pred": keep(r.get(pred_col, "")),
             "score": keep(r.get(score_col, "")) if score_col else "",
         })
     man = pd.DataFrame(manifest_rows)
-    # 全部加引号，确保换行安全
     man.to_csv(output_dir / "selected_manifest.csv", index=False, quoting=csv.QUOTE_ALL)
 
     # HTML
@@ -211,24 +201,22 @@ def build_site(df: pd.DataFrame, per_class: int, output_dir: Path, tag: str, it:
     for rec in manifest_rows:
         by_class.setdefault(rec["class"], []).append(rec)
 
-    def html_escape(s: str) -> str:
-        return (s.replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
-                .replace('"',"&quot;").replace("'","&#39;"))
-
     def pre_block(text: str) -> str:
-        # 在卡片里把多行 pred/gt 包到 <pre>，前端可直观看到换行
         esc = html_escape(text)
         return f"<pre class=\"code\" style=\"white-space:pre-wrap;word-wrap:break-word;margin:6px 0 0 0;\">{esc}</pre>"
 
     def card(rec):
         rel = rec["image_relpath"]
         img_src = f"images/{rel}" if rel else "assets/missing.png"
+        q = rec.get("question","")
         gt = rec.get("gt","")
         pd_ = rec.get("pred","")
         score = rec.get("score","")
         parts = []
         parts.append(f'<img class="thumb" loading="lazy" src="{img_src}" alt="img">')
         meta = []
+        if q:
+            meta.append(f'<div><span class="badge">question</span> {pre_block(q)}</div>')
         if pd_ or gt:
             meta.append(f'<div><span class="badge">pred</span> {pre_block(pd_)}</div>')
             meta.append(f'<div><span class="badge">gt</span> {pre_block(gt)}</div>')
@@ -280,7 +268,7 @@ def build_site(df: pd.DataFrame, per_class: int, output_dir: Path, tag: str, it:
     (output_dir / "copy_images.sh").write_text(COPY_IMAGES_SH, encoding="utf-8")
     os.chmod(output_dir / "copy_images.sh", 0o755)
 
-    # 打包 zip（可选）
+    # 可选打包
     if zip_output:
         zip_path = output_dir.parent / f"{output_dir.name}.zip"
         if zip_path.exists():
@@ -290,8 +278,7 @@ def build_site(df: pd.DataFrame, per_class: int, output_dir: Path, tag: str, it:
                 zf.write(p, p.relative_to(output_dir.parent))
         print(f"[OK] 打包完成: {zip_path}")
 
-    # 简要日志
-    print(f"[INFO] E/F 强制列：gt={gt_col}  pred={pred_col}（保留内部换行）")
+    print(f"[INFO] D/E/F 列：question={q_col}  gt={gt_col}  pred={pred_col}（保留内部换行）")
     print(f"[INFO] 错误样例数：{wrong_mask.sum()}")
     print(f"[OK] 已输出：{output_dir}")
 
@@ -319,9 +306,8 @@ if __name__ == "__main__":
     ap.add_argument("--tag", default="train_qwendit_unify_interleave_stage1p5")
     ap.add_argument("--iter", type=int, default=40000)
     ap.add_argument("--zip", action="store_true", help="额外打包成 zip")
-    # 覆盖类别/图片列名（如需）
-    ap.add_argument("--col-class", default=None)
-    ap.add_argument("--col-image", default=None)
+    ap.add_argument("--col-class", default=None, help="覆盖类别列名")
+    ap.add_argument("--col-image", default=None, help="覆盖图片路径列名")
     args = ap.parse_args()
 
     df = read_table(args.table)
