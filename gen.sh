@@ -4,4 +4,4 @@ python gen.py \
   --output-dir /pfs/lichenyi/und_caption \
   --tag train_qwendit_unify_interleave_stage1p5 \
   --iter 40000 \
-  --per-class 20 \
+  --per-class 30 \
